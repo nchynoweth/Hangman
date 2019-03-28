@@ -169,13 +169,14 @@ def check_done(guesss, word):
         return_num = 1
     return return_num
 
-while ((int(end_round) + 1) != (int(num_guess_length)) or (check_done(guesses, value_word) == 1)):
+while ((int(end_round) + 1) != (int(num_guess_length)) and (check_done(guesses, value_word) != 1)):
     letter = start_round()
 
 if (check_done(guesses, value_word) == 0):
+    clear()
     print("All out of guesses, the correct word is %s!" % (value_word))
     print("Thanks for playing!")
 else:
+    clear()
     print("You got it correct!")
     print("The correct word is %s!" % (value_word))
-
